@@ -1,0 +1,77 @@
+{% extends './base.html' %} {% block title %} Home {% endblock %} {% block
+customCSS %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/medico.css') }}"
+/>
+{% endblock %} {% block body %}
+<svg style="display: none">
+  <symbol id="users" viewBox="0 0 16 16">
+    <path
+      d="M8,0a8,8,0,1,0,8,8A8,8,0,0,0,8,0ZM8,15a7,7,0,0,1-5.19-2.32,2.71,2.71,0,0,1,1.7-1,13.11,13.11,0,0,0,1.29-.28,2.32,2.32,0,0,0,.94-.34,1.17,1.17,0,0,0-.27-.7h0A3.61,3.61,0,0,1,5.15,7.49,3.18,3.18,0,0,1,8,4.07a3.18,3.18,0,0,1,2.86,3.42,3.6,3.6,0,0,1-1.32,2.88h0a1.13,1.13,0,0,0-.27.69,2.68,2.68,0,0,0,.93.31,10.81,10.81,0,0,0,1.28.23,2.63,2.63,0,0,1,1.78,1A7,7,0,0,1,8,15Z"
+    />
+  </symbol>
+</svg>
+<header class="page-header">
+  <nav>
+    <p class="title"><a href="/medico">Hospital General De Barranquilla</a></p>
+
+    <ul class="admin-menu">
+      <li class="menu-heading">
+        <h3>Medico</h3>
+      </li>
+
+      <li>
+        <a href="/gestionarCitas">
+          <svg>
+            <use xlink:href="#users"></use>
+          </svg>
+          <span>Gestionar Citas</span>
+        </a>
+      </li>
+      <li>
+        <a href="/historiaClinica">
+          <svg>
+            <use xlink:href="#users"></use>
+          </svg>
+          <span>Crear historia clinica</span>
+        </a>
+      </li>
+      
+    </ul>
+  </nav>
+</header>
+<section class="page-content">
+  <section class="search-and-user">
+    <div class="admin-profile">
+      <span class="greeting">Bienvenido!</span>
+      <div class="notifications">
+        
+        <svg>
+          <use xlink:href="#users"></use>
+        </svg>
+      </div>
+    </div>
+  </section>
+  
+    
+      
+      <div class="container jumbotron jumbotron-fluid">
+        <div class="row">
+          <div class="col-sm">
+            <img class='foto-perfil' src="https://i.postimg.cc/Gp0sS21H/bruno-rodrigues-279x-IHym-PYY-unsplash.jpg" alt="">
+          </div>
+          <div class="col-sm">
+            <div class="container">
+              <h2 style="margin-bottom: 50px;">MEDICO GENERAL</h2>
+              <p class="lead">Profesional que practica la medicina y que intenta mantener y recuperar la salud mediante el estudio, el diagnóstico y el tratamiento de la enfermedad o lesión del paciente.</p>
+
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    
+  
+</section>
+{% endblock %}

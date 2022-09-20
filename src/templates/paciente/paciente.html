@@ -1,0 +1,187 @@
+{% extends './base.html' %} {% block title %} Citas-Paciente {% endblock %} {%
+block customCSS %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/paciente.css') }}"
+/>
+{% endblock %} {% block body %}
+
+<div class="header">
+  <div class="sides">
+    <a href="#" class="logo">Sistema de Control de Citas</a>
+  </div>
+
+  <div class="info">
+    <h1>Hospital General De Barranquilla</h1>
+    <h4>
+      Bienvenido! aquí podra agendar citas de cualquier especialidad con el
+      medico que desee
+    </h4>
+    <!-- Button trigger modal -->
+    <button
+      type="button"
+      class="btn btn-primary"
+      data-toggle="modal"
+      data-target="#exampleModal"
+    >
+      Agendar Cita
+    </button>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title text-dark" id="exampleModalLabel">
+              Modal title
+            </h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <style>
+              #uni_modal .modal-content > .modal-footer {
+                display: none;
+              }
+              #uni_modal .modal-body {
+                padding-top: 0 !important;
+              }
+            </style>
+            <div class="container-fluid">
+              <form id="appointment_form" class="py-2">
+                <div class="row text-muted text-left" id="appointment">
+                  <div class="col-6" id="frm-field">
+                    <input type="hidden" name="id" value="" />
+                    <input type="hidden" name="patient_id" value="" />
+                    <div class="form-group ">
+                      <label for="name" class="control-label"
+                        >Nombre Completo</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="name"
+                        value=""
+                        required=""
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="email" class="control-label"
+                        >Correo Electrónico</label
+                      >
+                      <input
+                        type="email"
+                        class="form-control"
+                        name="email"
+                        value=""
+                        required=""
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="contact" class="control-label"
+                        >Contacto</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="contact"
+                        value=""
+                        required=""
+                      />
+                    </div>
+                    
+                    <div class="form-group">
+                      <label for="dob" class="control-label"
+                        >Fecha de Nacimiento</label
+                      >
+                      <input
+                        type="date"
+                        class="form-control"
+                        name="dob"
+                        value=""
+                        required=""
+                      />
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="form-group">
+                      <label for="gender" class="control-label">Medico</label>
+                      <select
+                        type="text"
+                        class="custom-select"
+                        name="gender"
+                        required=""
+                      >
+                        <option>Elija</option>
+                        <option>Leidy Navarro</option>
+                        <option>Duvan Avila</option>
+                        <option>Leidy Navarro</option>
+                        <option>Duvan Avila</option>
+                        <option>Leidy Navarro</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="gender" class="control-label">Especialidad</label>
+                      <select
+                        type="text"
+                        class="custom-select"
+                        name="gender"
+                        required=""
+                      >
+                        <option>Elija</option>
+                        <option>Odontologia</option>
+                        <option>Pediatria</option>
+                        <option>Psicologia</option>
+                        <option>...</option>
+                        <option>...</option>
+                      </select>
+                    </div>
+                   
+                    <input type="hidden" name="ailment" value="" />
+                    <div class="form-group">
+                      <label for="date_sched" class="control-label"
+                        >Fecha Cita</label
+                      >
+                      <input
+                        type="datetime-local"
+                        class="form-control"
+                        name="date_sched"
+                        value=""
+                        required=""
+                      />
+                    </div>
+                    <input type="hidden" name="status" value="0" />
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary">Solicitar Cita</button>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Cancelar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

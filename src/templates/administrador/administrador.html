@@ -1,0 +1,76 @@
+{% extends './base.html' %} {% block title %} Administrador {% endblock %} {%
+block customCSS %}
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Sen&amp;display=swap"
+/><link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/administrador.css') }}"
+/>
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/meAdmin.css') }}"
+/>
+{% endblock %} {% block body %}
+
+<svg style="display: none">
+  <symbol id="users" viewBox="0 0 16 16">
+    <path
+      d="M8,0a8,8,0,1,0,8,8A8,8,0,0,0,8,0ZM8,15a7,7,0,0,1-5.19-2.32,2.71,2.71,0,0,1,1.7-1,13.11,13.11,0,0,0,1.29-.28,2.32,2.32,0,0,0,.94-.34,1.17,1.17,0,0,0-.27-.7h0A3.61,3.61,0,0,1,5.15,7.49,3.18,3.18,0,0,1,8,4.07a3.18,3.18,0,0,1,2.86,3.42,3.6,3.6,0,0,1-1.32,2.88h0a1.13,1.13,0,0,0-.27.69,2.68,2.68,0,0,0,.93.31,10.81,10.81,0,0,0,1.28.23,2.63,2.63,0,0,1,1.78,1A7,7,0,0,1,8,15Z"
+    />
+  </symbol>
+</svg>
+<header class="page-header">
+  <nav>
+    <p class="title"><a href="/administrador">Hospital General De Barranquilla</a></p>
+
+    <ul class="admin-menu">
+      <li class="menu-heading">
+        <h3>Administrador</h3>
+      </li>
+
+      <li>
+        <a href="/gestionPacientes">
+          <svg>
+            <use xlink:href="#users"></use>
+          </svg>
+          <span>Gestion pacientes</span>
+        </a>
+      </li>
+      <li>
+        <a href="/gestionMedicos">
+          <svg>
+            <use xlink:href="#users"></use>
+          </svg>
+          <span>Gestion médicos</span>
+        </a>
+      </li>
+      <li>
+        <a href="/gestionCitas">
+          <svg>
+            <use xlink:href="#users"></use>
+          </svg>
+          <span>Gestion citas</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
+<section class="page-content">
+    <div id="main">
+        <h1>BIENVENIDO USUARIO SUPER ADMINISTRADOR</h1>
+        <!-- <P>Aquí podra gestionar los pacientes, medicos y citas</P> -->
+    
+        <div class="buttons">
+          <button class="next" onclick="go(-1)"></button>
+          <button class="prev" onclick="go(1)"></button>
+        </div>
+      </div>
+
+  
+</section>
+
+{% endblock %} {% block mainjs %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script>
+<script src="../../static/js/administrador.js"></script>
+{% endblock %}
